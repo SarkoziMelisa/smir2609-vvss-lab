@@ -2,6 +2,8 @@ package inventory.service;
 
 import inventory.model.*;
 import inventory.repository.InventoryRepository;
+import inventory.validator.ValidatorException;
+import inventory.validator.ValidatorProduct;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -9,10 +11,12 @@ public class InventoryService {
 
     private InventoryRepository repo;
 
-    public InventoryService(InventoryRepository repo){
-        this.repo = repo;
-    }
+    private ValidatorProduct validator;
 
+    public InventoryService(InventoryRepository repo, ValidatorProduct val){
+        this.repo =repo;
+        this.validator = val;
+    }
 
     public void addInhousePart(String name, double price, int inStock, int min, int  max, int partDynamicValue){
         InhousePart inhousePart = new InhousePart(repo.getAutoPartId(), name, price, inStock, min, max, partDynamicValue);
@@ -24,8 +28,9 @@ public class InventoryService {
         repo.addPart(outsourcedPart);
     }
 
-    public void addProduct(String name, double price, int inStock, int min, int  max, ObservableList<Part> addParts){
+    public void addProduct(String name, double price, int inStock, int min, int  max, ObservableList<Part> addParts) throws ValidatorException {
         Product product = new Product(repo.getAutoProductId(), name, price, inStock, min, max, addParts);
+        validator.validate(product);
         repo.addProduct(product);
     }
 

@@ -4,6 +4,7 @@ import inventory.model.Item;
 import inventory.model.Part;
 import inventory.model.Product;
 import inventory.service.InventoryService;
+import inventory.validator.ValidatorException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -196,16 +197,15 @@ public class AddProductController implements Initializable, Controller {
         errorMessage = "";
         
         try {
-            errorMessage = Product.isValidProduct(name, Double.parseDouble(price), Integer.parseInt(inStock), Integer.parseInt(min), Integer.parseInt(max), addParts, errorMessage);
-            if(errorMessage.length() > 0) {
+            try {
+                service.addProduct(name, Double.parseDouble(price), Integer.parseInt(inStock), Integer.parseInt(min), Integer.parseInt(max), addParts);
+                displayScene(event, "/fxml/MainScreen.fxml");
+            } catch (ValidatorException exc) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Error Adding Part!");
                 alert.setHeaderText("Error!");
-                alert.setContentText(errorMessage);
+                alert.setContentText(exc.getErrorMessage());
                 alert.showAndWait();
-            } else {
-                service.addProduct(name, Double.parseDouble(price), Integer.parseInt(inStock), Integer.parseInt(min), Integer.parseInt(max), addParts);
-                displayScene(event, "/fxml/MainScreen.fxml");
             }
         } catch (NumberFormatException e) {
             System.out.println(e.getMessage());
