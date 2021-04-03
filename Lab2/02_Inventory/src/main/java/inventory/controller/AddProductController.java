@@ -30,7 +30,8 @@ public class AddProductController implements Initializable, Controller {
     private Stage stage;
     private Parent scene;
     private ObservableList<Part> addParts = FXCollections.observableArrayList();
-    private String errorMessage = "";
+    private String errorMessage = new String();
+    private int productId;
 
     private InventoryService service;
     
@@ -107,7 +108,7 @@ public class AddProductController implements Initializable, Controller {
         FXMLLoader loader= new FXMLLoader(getClass().getResource(source));
         //scene = FXMLLoader.load(getClass().getResource(source));
         scene = loader.load();
-        Controller ctrl = loader.getController();
+        Controller ctrl=loader.getController();
         ctrl.setService(service);
         stage.setScene(new Scene(scene));
         stage.show();
@@ -197,22 +198,27 @@ public class AddProductController implements Initializable, Controller {
         errorMessage = "";
         
         try {
-            try {
-                service.addProduct(name, Double.parseDouble(price), Integer.parseInt(inStock), Integer.parseInt(min), Integer.parseInt(max), addParts);
-                displayScene(event, "/fxml/MainScreen.fxml");
-            } catch (ValidatorException exc) {
+            errorMessage = Product.isValidProduct(name, Double.parseDouble(price), Integer.parseInt(inStock), Integer.parseInt(min), Integer.parseInt(max), addParts, errorMessage);
+            if(errorMessage.length() > 0) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Error Adding Part!");
                 alert.setHeaderText("Error!");
-                alert.setContentText(exc.getErrorMessage());
+                alert.setContentText(errorMessage);
                 alert.showAndWait();
+            } else {
+                try {
+                    service.addProduct(name, Double.parseDouble(price), Integer.parseInt(inStock), Integer.parseInt(min), Integer.parseInt(max), addParts);
+                    displayScene(event, "/fxml/MainScreen.fxml");
+                } catch (ValidatorException ex) {
+                    ex.printStackTrace();
+                }
             }
         } catch (NumberFormatException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Form contains blank field.");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error Adding Product!");
             alert.setHeaderText("Error!");
-            alert.setContentText(e.getMessage());
+            alert.setContentText("Form contains blank field.");
             alert.showAndWait();
         }
 

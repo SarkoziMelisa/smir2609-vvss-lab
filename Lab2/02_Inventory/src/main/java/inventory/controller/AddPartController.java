@@ -24,10 +24,11 @@ public class AddPartController implements Initializable, Controller {
     private Stage stage;
     private Parent scene;
     private boolean isOutsourced = true;
-    private String errorMessage = "";
+    private String errorMessage = new String();
+    private int partId;
 
     private InventoryService service;
-
+    
     @FXML
     private RadioButton inhouseRBtn;
 
@@ -36,6 +37,9 @@ public class AddPartController implements Initializable, Controller {
     
     @FXML
     private Label addPartDynamicLbl;
+
+    @FXML
+    private TextField partIdTxt;
 
     @FXML
     private TextField nameTxt;
@@ -60,7 +64,7 @@ public class AddPartController implements Initializable, Controller {
     @Override
     public void setService(InventoryService service){
 
-        this.service = service;
+        this.service=service;
     }
 
     /**
@@ -102,13 +106,11 @@ public class AddPartController implements Initializable, Controller {
         alert.setHeaderText("Confirm Cancelation");
         alert.setContentText("Are you sure you want to cancel adding part?");
         Optional<ButtonType> result = alert.showAndWait();
-        if(result.isPresent()) {
-            if (result.get() == ButtonType.OK) {
-                System.out.println("Ok selected. Part addition canceled.");
-                displayScene(event, "/fxml/MainScreen.fxml");
-            } else {
-                System.out.println("Cancel clicked.");
-            }
+        if(result.get() == ButtonType.OK) {
+            System.out.println("Ok selected. Part addition canceled.");
+            displayScene(event, "/fxml/MainScreen.fxml");
+        } else {
+            System.out.println("Cancel clicked.");
         }
     }
 
@@ -159,7 +161,7 @@ public class AddPartController implements Initializable, Controller {
                 alert.setContentText(errorMessage);
                 alert.showAndWait();
             } else {
-               if(isOutsourced) {
+               if(isOutsourced == true) {
                     service.addOutsourcePart(name, Double.parseDouble(price), Integer.parseInt(inStock), Integer.parseInt(min), Integer.parseInt(max), partDynamicValue);
                 } else {
                     service.addInhousePart(name, Double.parseDouble(price), Integer.parseInt(inStock), Integer.parseInt(min), Integer.parseInt(max), Integer.parseInt(partDynamicValue));
@@ -168,11 +170,11 @@ public class AddPartController implements Initializable, Controller {
             }
             
         } catch (NumberFormatException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Form contains blank field.");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error Adding Part!");
             alert.setHeaderText("Error!");
-            alert.setContentText(e.getMessage());
+            alert.setContentText("Form contains blank field.");
             alert.showAndWait();
         }
     }

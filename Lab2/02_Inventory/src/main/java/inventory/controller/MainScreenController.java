@@ -22,7 +22,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 
-public class MainScreenController implements Initializable,Controller {
+public class MainScreenController implements Initializable, Controller {
     
      // Declare fields
     private Stage stage;
@@ -47,6 +47,9 @@ public class MainScreenController implements Initializable,Controller {
     private TableView<Part> partsTableView;
 
     @FXML
+    private TableColumn<Part, Integer> partsIdCol;
+
+    @FXML
     private TableColumn<Part, String> partsNameCol;
 
     @FXML
@@ -58,6 +61,9 @@ public class MainScreenController implements Initializable,Controller {
 
     @FXML
     private TableView<Product> productsTableView;
+
+    @FXML
+    private TableColumn<Product, Integer> productsIdCol;
 
     @FXML
     private TableColumn<Product, String> productsNameCol;
@@ -232,13 +238,11 @@ public class MainScreenController implements Initializable,Controller {
         alert.setHeaderText("Confirm Exit");
         alert.setContentText("Are you sure you want to exit?");
         Optional<ButtonType> result = alert.showAndWait();
-        if(result.isPresent()) {
-            if (result.get() == ButtonType.OK) {
-                System.out.println("Ok selected. Program exited");
-                System.exit(0);
-            } else {
-                System.out.println("Cancel clicked.");
-            }
+        if(result.get() == ButtonType.OK) {
+            System.out.println("Ok selected. Program exited");
+            System.exit(0);
+        } else {
+            System.out.println("Cancel clicked.");
         }
     }
 

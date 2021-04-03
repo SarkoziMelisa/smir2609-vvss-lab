@@ -48,7 +48,6 @@
                         <Insets right="20.0" top="60.0" />
                      </VBox.margin>
                      <children>
-                        <Label text="ID" />
                         <Label text="Name" GridPane.rowIndex="1" />
                         <Label text="Inventory" GridPane.rowIndex="2" />
                         <Label text="Price" GridPane.rowIndex="3" />
@@ -64,10 +63,6 @@
                               <TextField fx:id="minTxt" promptText="Min" />
                            </children>
                         </HBox>
-                        <TextField fx:id="productIdTxt" editable="false" style="-fx-background-color: #d3d3d3;" text="Auto Gen - Disabled" GridPane.columnIndex="1">
-                           <font>
-                              <Font name="System Italic" size="12.0" />
-                           </font></TextField>
                         <TextField fx:id="nameTxt" promptText="Product Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <TextField fx:id="inventoryTxt" promptText="Inventory" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <TextField fx:id="priceTxt" promptText="Price" GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -92,7 +87,6 @@
                   </HBox>
                   <TableView fx:id="addProductTableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                     <columns>
-                      <TableColumn fx:id="addProductIdCol" prefWidth="126.0" text="Part ID" />
                       <TableColumn fx:id="addProductNameCol" prefWidth="126.0" text="Part Name" />
                         <TableColumn fx:id="addProductInventoryCol" prefWidth="126.0" text="Inventory" />
                         <TableColumn fx:id="addProductPriceCol" prefWidth="126.0" text="Price" />
@@ -111,7 +105,6 @@
                   </ButtonBar>
                   <TableView fx:id="deleteProductTableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                     <columns>
-                      <TableColumn fx:id="deleteProductIdCol" prefWidth="126.0" text="Part ID" />
                       <TableColumn fx:id="deleteProductNameCol" prefWidth="126.0" text="Part Name" />
                         <TableColumn fx:id="deleteProductInventoryCol" prefWidth="126.0" text="Inventory" />
                         <TableColumn fx:id="deleteProductPriceCol" prefWidth="126.0" text="Price" />

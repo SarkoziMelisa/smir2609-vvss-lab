@@ -38,17 +38,11 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="ID" />
             <Label text="Name" GridPane.rowIndex="1" />
             <Label text="Inventory" GridPane.rowIndex="2" />
             <Label text="Price" GridPane.rowIndex="3" />
             <Label text="Max" GridPane.rowIndex="4" />
             <Label fx:id="addPartDynamicLbl" text="Company Name" GridPane.rowIndex="5" />
-            <TextField editable="false" style="-fx-background-color: #d3d3d3;" text="Auto Gen - Disabled" GridPane.columnIndex="1">
-               <font>
-                  <Font name="System Italic" size="13.0" />
-               </font>
-            </TextField>
             <TextField fx:id="nameTxt" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="inventoryTxt" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="priceTxt" GridPane.columnIndex="1" GridPane.rowIndex="3" />

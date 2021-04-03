@@ -1,6 +1,9 @@
 package inventory.service;
 
-import inventory.model.*;
+import inventory.model.InhousePart;
+import inventory.model.OutsourcedPart;
+import inventory.model.Part;
+import inventory.model.Product;
 import inventory.repository.InventoryRepository;
 import inventory.validator.ValidatorException;
 import inventory.validator.ValidatorProduct;

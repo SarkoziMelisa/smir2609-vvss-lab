@@ -37,6 +37,12 @@ public class ModifyPartController implements Initializable, Controller {
     private InventoryService service;
     
     @FXML
+    private RadioButton inhouseRBtn;
+
+    @FXML
+    private RadioButton outsourcedRBtn;
+    
+    @FXML
     private Label modifyPartDynamicLbl;
     
     @FXML
@@ -77,10 +83,12 @@ public class ModifyPartController implements Initializable, Controller {
         if(part instanceof InhousePart) {
             modifyPartDynamicTxt.setText(Integer.toString(((InhousePart) service.getAllParts().get(partIndex)).getMachineId()));
             modifyPartDynamicLbl.setText("Machine ID");
+            inhouseRBtn.setSelected(true);
             isOutsourced = false;
         } else {
             modifyPartDynamicTxt.setText(((OutsourcedPart) service.getAllParts().get(partIndex)).getCompanyName());
             modifyPartDynamicLbl.setText("Company Name");
+            outsourcedRBtn.setSelected(true);
             isOutsourced = true;
         }
     }
@@ -102,14 +110,36 @@ public class ModifyPartController implements Initializable, Controller {
      */
     @FXML
     private void displayScene(ActionEvent event, String source) throws IOException {
-        stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(source));
+        stage = (Stage)((Button)event.getSource()).getScene().getWindow();
+        FXMLLoader loader= new FXMLLoader(getClass().getResource(source));
         //scene = FXMLLoader.load(getClass().getResource(source));
         scene = loader.load();
-        Controller ctrl = loader.getController();
+        Controller ctrl=loader.getController();
         ctrl.setService(service);
         stage.setScene(new Scene(scene));
         stage.show();
+    }
+    
+    /**
+     * If in-house radio button is selected set isOutsourced boolean
+     * to false and modify dynamic label to Machine ID
+     * @param event 
+     */
+    @FXML
+    void handleInhouseRBtn(ActionEvent event) {
+        isOutsourced = false;
+        modifyPartDynamicLbl.setText("Machine ID");
+    }
+    
+    /**
+     * If outsourced radio button is selected set isOutsourced boolean
+     * to true and modify dynamic label to Company Name
+     * @param event 
+     */
+    @FXML
+    void handleOutsourcedRBtn(ActionEvent event) {
+        isOutsourced = true;
+        modifyPartDynamicLbl.setText("Company Name");
     }
 
     /**
@@ -168,11 +198,11 @@ public class ModifyPartController implements Initializable, Controller {
             }
 
         } catch (NumberFormatException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Blank Fields");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error Adding Part!");
             alert.setHeaderText("Error");
-            alert.setContentText(e.getMessage());
+            alert.setContentText("Form contains blank field.");
             alert.showAndWait();
         }
 

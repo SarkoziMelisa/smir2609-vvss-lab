@@ -4,7 +4,7 @@ package inventory.model;
 import javafx.collections.ObservableList;
 
 
-public class Product extends Item{
+public class Product extends Item {
     
     // Declare fields
     private ObservableList<Part> associatedParts;

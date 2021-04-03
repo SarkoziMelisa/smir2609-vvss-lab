@@ -233,11 +233,11 @@ public class ModifyProductController implements Initializable, Controller {
                 displayScene(event, "/fxml/MainScreen.fxml");
             }
         } catch (NumberFormatException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Form contains blank field.");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error Adding Product!");
             alert.setHeaderText("Error!");
-            alert.setContentText(e.getMessage());
+            alert.setContentText("Form contains blank field.");
             alert.showAndWait();
         }
     }

@@ -1,7 +1,10 @@
 package inventory.repository;
 
 
-import inventory.model.*;
+import inventory.model.InhousePart;
+import inventory.model.OutsourcedPart;
+import inventory.model.Part;
+import inventory.model.Product;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

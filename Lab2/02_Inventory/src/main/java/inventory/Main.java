@@ -1,8 +1,8 @@
 package inventory;
 
+import inventory.controller.MainScreenController;
 import inventory.repository.InventoryRepository;
 import inventory.service.InventoryService;
-import inventory.controller.MainScreenController;
 import inventory.validator.ValidatorProduct;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
