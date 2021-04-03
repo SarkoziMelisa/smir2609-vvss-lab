@@ -2,7 +2,7 @@
 package inventory.model;
 
 
-public class Item {
+public abstract class Item {
 
     // Declare fields
     private int id;
@@ -13,7 +13,7 @@ public class Item {
     private int max;
     
     // Constructor
-    public Item(int id, String name, double price, int inStock, int min, int max) {
+    protected Item(int id, String name, double price, int inStock, int min, int max) {
         this.id = id;
         this.name = name;
         this.price = price;

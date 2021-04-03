@@ -17,6 +17,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -87,7 +90,8 @@
       <workItem from="1616933597346" duration="119000" />
       <workItem from="1617022722166" duration="1981000" />
       <workItem from="1617453694575" duration="8000" />
-      <workItem from="1617454007601" duration="785000" />
+      <workItem from="1617454007601" duration="853000" />
+      <workItem from="1617455458111" duration="12000" />
     </task>
     <servers />
   </component>

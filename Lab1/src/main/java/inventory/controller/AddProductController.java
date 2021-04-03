@@ -4,6 +4,7 @@ import inventory.model.Item;
 import inventory.model.Part;
 import inventory.model.Product;
 import inventory.service.InventoryService;
+import inventory.validator.ValidatorException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -41,9 +42,6 @@ public class AddProductController implements Initializable, Controller {
     private TextField maxTxt;
 
     @FXML
-    private TextField productIdTxt;
-
-    @FXML
     private TextField nameTxt;
 
     @FXML
@@ -59,9 +57,6 @@ public class AddProductController implements Initializable, Controller {
     private TableView<Part> addProductTableView;
 
     @FXML
-    private TableColumn<Part, Integer> addProductIdCol;
-
-    @FXML
     private TableColumn<Part, String> addProductNameCol;
 
     @FXML
@@ -72,9 +67,6 @@ public class AddProductController implements Initializable, Controller {
 
     @FXML
     private TableView<Part> deleteProductTableView;
-
-    @FXML
-    private TableColumn<Part, Integer> deleteProductIdCol;
 
     @FXML
     private TableColumn<Part, String> deleteProductNameCol;
@@ -99,7 +91,6 @@ public class AddProductController implements Initializable, Controller {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // Populate add product table view
-        addProductIdCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         addProductNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         addProductInventoryCol.setCellValueFactory(new PropertyValueFactory<>("inStock"));
         addProductPriceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
@@ -128,8 +119,7 @@ public class AddProductController implements Initializable, Controller {
      */
     public void updateDeleteProductTableView() {
         deleteProductTableView.setItems(addParts);
-        
-        deleteProductIdCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+
         deleteProductNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         deleteProductInventoryCol.setCellValueFactory(new PropertyValueFactory<>("inStock"));
         deleteProductPriceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
@@ -216,8 +206,12 @@ public class AddProductController implements Initializable, Controller {
                 alert.setContentText(errorMessage);
                 alert.showAndWait();
             } else {
-                service.addProduct(name, Double.parseDouble(price), Integer.parseInt(inStock), Integer.parseInt(min), Integer.parseInt(max), addParts);
-                displayScene(event, "/fxml/MainScreen.fxml");
+                try {
+                    service.addProduct(name, Double.parseDouble(price), Integer.parseInt(inStock), Integer.parseInt(min), Integer.parseInt(max), addParts);
+                    displayScene(event, "/fxml/MainScreen.fxml");
+                } catch (ValidatorException ex) {
+                    ex.printStackTrace();
+                }
             }
         } catch (NumberFormatException e) {
             System.out.println("Form contains blank field.");

@@ -22,7 +22,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 
-public class MainScreenController implements Initializable,Controller {
+public class MainScreenController implements Initializable, Controller {
     
      // Declare fields
     private Stage stage;
@@ -95,13 +95,11 @@ public class MainScreenController implements Initializable,Controller {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // Populate parts table view
-        partsIdCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         partsNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         partsInventoryCol.setCellValueFactory(new PropertyValueFactory<>("inStock"));
         partsPriceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
 
         // Populate products table view
-        productsIdCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         productsNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         productsInventoryCol.setCellValueFactory(new PropertyValueFactory<>("inStock"));
         productsPriceCol.setCellValueFactory(new PropertyValueFactory<>("price"));

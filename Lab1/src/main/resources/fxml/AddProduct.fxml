@@ -15,13 +15,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory.controller.ModifyProductController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory.controller.AddProductController">
    <children>
       <HBox prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: #d3d3d3; -fx-border-radius: 3px;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Label text="Modify Product" textFill="#4c6eea">
+                  <Label text="Add Product" textFill="#4c6eea">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
@@ -48,7 +48,6 @@
                         <Insets right="20.0" top="60.0" />
                      </VBox.margin>
                      <children>
-                        <Label text="ID" />
                         <Label text="Name" GridPane.rowIndex="1" />
                         <Label text="Inventory" GridPane.rowIndex="2" />
                         <Label text="Price" GridPane.rowIndex="3" />
@@ -64,10 +63,6 @@
                               <TextField fx:id="minTxt" promptText="Min" />
                            </children>
                         </HBox>
-                        <TextField fx:id="productIdTxt" style="-fx-background-color: #d3d3d3;" GridPane.columnIndex="1">
-                           <font>
-                              <Font name="System Italic" size="12.0" />
-                           </font></TextField>
                         <TextField fx:id="nameTxt" promptText="Product Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <TextField fx:id="inventoryTxt" promptText="Inventory" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <TextField fx:id="priceTxt" promptText="Price" GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -92,7 +87,6 @@
                   </HBox>
                   <TableView fx:id="addProductTableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                     <columns>
-                      <TableColumn fx:id="addProductIdCol" prefWidth="126.0" text="Part ID" />
                       <TableColumn fx:id="addProductNameCol" prefWidth="126.0" text="Part Name" />
                         <TableColumn fx:id="addProductInventoryCol" prefWidth="126.0" text="Inventory" />
                         <TableColumn fx:id="addProductPriceCol" prefWidth="126.0" text="Price" />
@@ -111,7 +105,6 @@
                   </ButtonBar>
                   <TableView fx:id="deleteProductTableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                     <columns>
-                      <TableColumn fx:id="deleteProductIdCol" prefWidth="126.0" text="Part ID" />
                       <TableColumn fx:id="deleteProductNameCol" prefWidth="126.0" text="Part Name" />
                         <TableColumn fx:id="deleteProductInventoryCol" prefWidth="126.0" text="Inventory" />
                         <TableColumn fx:id="deleteProductPriceCol" prefWidth="126.0" text="Price" />

@@ -44,9 +44,6 @@ public class ModifyProductController implements Initializable, Controller {
     private TextField maxTxt;
 
     @FXML
-    private TextField productIdTxt;
-
-    @FXML
     private TextField nameTxt;
 
     @FXML
@@ -62,9 +59,6 @@ public class ModifyProductController implements Initializable, Controller {
     private TableView<Part> addProductTableView;
 
     @FXML
-    private TableColumn<Part, Integer> addProductIdCol;
-
-    @FXML
     private TableColumn<Part, String> addProductNameCol;
 
     @FXML
@@ -75,9 +69,6 @@ public class ModifyProductController implements Initializable, Controller {
 
     @FXML
     private TableView<Part> deleteProductTableView;
-
-    @FXML
-    private TableColumn<Part, Integer> deleteProductIdCol;
 
     @FXML
     private TableColumn<Part, String> deleteProductNameCol;
@@ -99,7 +90,6 @@ public class ModifyProductController implements Initializable, Controller {
         // Populate add product table view
         addProductTableView.setItems(service.getAllParts());
 
-        addProductIdCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         addProductNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         addProductInventoryCol.setCellValueFactory(new PropertyValueFactory<>("inStock"));
         addProductPriceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
@@ -108,7 +98,6 @@ public class ModifyProductController implements Initializable, Controller {
         Product product = service.getAllProducts().get(productIndex);
 
         productId = service.getAllProducts().get(productIndex).getId();
-        productIdTxt.setText(Integer.toString(product.getId()));
         nameTxt.setText(product.getName());
         inventoryTxt.setText(Integer.toString(product.getInStock()));
         priceTxt.setText(Double.toString(product.getPrice()));
@@ -151,8 +140,7 @@ public class ModifyProductController implements Initializable, Controller {
      */
     private void updateDeleteProductTableView() {
         deleteProductTableView.setItems(addParts);
-        
-        deleteProductIdCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+
         deleteProductNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         deleteProductInventoryCol.setCellValueFactory(new PropertyValueFactory<>("inStock"));
         deleteProductPriceCol.setCellValueFactory(new PropertyValueFactory<>("price"));

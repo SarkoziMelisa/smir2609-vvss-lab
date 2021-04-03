@@ -1,7 +1,7 @@
 package inventory.model;
 
 public abstract class Part extends Item {
-    public Part(int id, String name, double price, int inStock, int min, int max) {
+    protected Part(int id, String name, double price, int inStock, int min, int max) {
         super(id, name, price, inStock, min, max);
     }
 

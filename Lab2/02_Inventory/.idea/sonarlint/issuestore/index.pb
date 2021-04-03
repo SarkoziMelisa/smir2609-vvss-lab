@@ -9,3 +9,17 @@ l
 <src/main/java/inventory/controller/MainScreenController.java,f\e\fe123040025ffc7790be0315cb187fb9b2631761
 l
 <src/main/java/inventory/controller/AddProductController.java,e\b\ebc32a263b34eeff26b01cbf68aed681310714be
+e
+5src/main/java/inventory/repository/PartInventory.java,5\d\5da92ea8d0ab8d6cfd491bc96fc4786a1c2b0194
+W
+'src/main/java/inventory/model/Part.java,f\d\fd1a9dc81ddf20578ac17075e7f75e2bd44285ad
+g
+7src/main/java/inventory/validator/ValidatorProduct.java,c\0\c01a6791880fa0a8fca5b1f85c91afceb19b1ab6
+i
+9src/main/java/inventory/validator/ValidatorException.java,d\7\d72885fa23b5586b5a772fb17e76c1cab8aa2148
+a
+1src/main/java/inventory/model/OutsourcedPart.java,d\f\df0af9f23528c297ca223e6f68423787a591d8d7
+b
+2src/main/java/inventory/controller/Controller.java,a\6\a6635e298a8cf86a761fdee9b7ec350061490945
+a
+1src/main/java/inventory/repository/Inventory.java,7\8\7819f32b9ac7c828c03dfc9aa3a2c74a033968ef

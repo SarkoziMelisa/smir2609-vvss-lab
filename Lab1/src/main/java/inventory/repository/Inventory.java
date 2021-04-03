@@ -1,6 +1,7 @@
 
-package inventory.model;
+package inventory.repository;
 
+import inventory.model.Item;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -40,12 +41,10 @@ public class Inventory<T extends Item> {
      * @return 
      */
     public T lookupItem(String searchItem) {
-        boolean isFound = false;
         for(T item: items) {
-            if(item.getName().contains(searchItem) || (item.getId() + "").equals(searchItem)) {
+            if(item.getName().contains(searchItem)) {
                 return item;
             }
-            isFound = true;
         }
         return null;
     }

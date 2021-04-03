@@ -1,7 +1,10 @@
 package inventory.repository;
 
 
-import inventory.model.*;
+import inventory.model.InhousePart;
+import inventory.model.OutsourcedPart;
+import inventory.model.Part;
+import inventory.model.Product;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -17,28 +20,29 @@ public class InventoryRepository {
 	public InventoryRepository(){
 		this.partInventory = new PartInventory();
 		this.productInventory = new ProductInventory();
-		readParts();
-		readProducts();
+		try {
+			readParts();
+			readProducts();
+		} catch(NullPointerException ex) {
+			ex.printStackTrace();
+		}
 	}
 
-	private void readParts(){
+	private void readParts() throws NullPointerException {
 		ClassLoader classLoader = InventoryRepository.class.getClassLoader();
 		File file = new File(classLoader.getResource(filename).getFile());
 		ObservableList<Part> listP = FXCollections.observableArrayList();
-		BufferedReader br = null;
-		try {
-			br = new BufferedReader(new FileReader(file));
+		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 			String line = null;
-			while((line = br.readLine()) != null){
+			while((line = br.readLine())!= null) {
 				Part part = getPartFromString(line);
 				if (part != null)
 					listP.add(part);
 			}
-			br.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-        partInventory.setItems(listP);
+		partInventory.setItems(listP);
 	}
 
 	private Part getPartFromString(String line){
@@ -71,7 +75,7 @@ public class InventoryRepository {
 		return part;
 	}
 
-	private void readProducts(){
+	private void readProducts() throws NullPointerException {
 		ClassLoader classLoader = InventoryRepository.class.getClassLoader();
 		File file = new File(classLoader.getResource(filename).getFile());
 

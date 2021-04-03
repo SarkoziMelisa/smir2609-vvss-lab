@@ -1,0 +1,21 @@
+
+R
+java:S3655m"5Call "result.isPresent()" before accessing the value.(ÃÇûÞ8˜Ÿ†¿‰/
+x
+java:S1450"[Remove the "errorMessage" field and declare it as a local variable in the relevant methods.(ÊÃ‘æ8˜Ÿ†¿‰/
+q
+java:S1450"TRemove the "scene" field and declare it as a local variable in the relevant methods.(‹ôÒ¡8˜Ÿ†¿‰/
+v
+java:S1450"TRemove the "stage" field and declare it as a local variable in the relevant methods.(‹ðÑœýÿÿÿÿ8˜Ÿ†¿‰/
+
+java:S1186>"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¥×¹<8˜Ÿ†¿‰/
+=
+java:S2129" Remove this "String" constructor(ÊÃ‘æ8˜Ÿ†¿‰/
+X	java:S125W"<This block of commented-out lines of code should be removed.( ÆüÖ8˜Ÿ†¿‰/
+Z	java:S106n"9Replace this use of System.out or System.err by a logger.(©²²éúÿÿÿÿ8˜Ÿ†¿‰/
+U	java:S106q"9Replace this use of System.out or System.err by a logger.(¤Õï«8˜Ÿ†¿‰/
+K
+java:S1125¤"(Remove the literal "true" boolean value.(ÿÂóéüÿÿÿÿ8˜Ÿ†¿‰/
+[	java:S106­"9Replace this use of System.out or System.err by a logger.(Éâ…ºýÿÿÿÿ8˜Ÿ†¿‰/
+L
+java:S1068"*Remove this unused "partId" private field.(•›™âýÿÿÿÿ8˜Ÿ†¿‰/

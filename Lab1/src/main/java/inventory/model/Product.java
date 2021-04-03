@@ -4,10 +4,10 @@ package inventory.model;
 import javafx.collections.ObservableList;
 
 
-public class Product extends Item{
+public class Product extends Item {
     
     // Declare fields
-    private ObservableList<Part> associatedParts;// = FXCollections.observableArrayList();
+    private ObservableList<Part> associatedParts;
 
     // Constructor
     public Product(int productId, String name, double price, int inStock, int min, int max, ObservableList<Part> partList) {
@@ -58,9 +58,9 @@ public class Product extends Item{
      * @return 
      */
     public static String isValidProduct(String name, double price, int inStock, int min, int max, ObservableList<Part> parts, String errorMessage) {
-        double sumOfParts = 0.00;
+        double priceOfParts = 0.00;
         for (Part part : parts) {
-            sumOfParts += part.getPrice();
+            priceOfParts += part.getPrice();
         }
         if (name.equals("")) {
             errorMessage += "A name has not been entered. ";
@@ -80,10 +80,10 @@ public class Product extends Item{
         if(inStock > max) {
             errorMessage += "Inventory level is higher than the maximum value. ";
         }
-        if (parts.size() < 1) {
+        if (parts.isEmpty()) {
             errorMessage += "Product must contain at least 1 part. ";
         }
-        if (sumOfParts > price) {
+        if (priceOfParts > price) {
             errorMessage += "Product price must be greater than cost of parts. ";
         }
         return errorMessage;

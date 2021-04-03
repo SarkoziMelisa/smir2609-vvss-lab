@@ -1,6 +1,5 @@
 package inventory.controller;
 
-import inventory.model.Item;
 import inventory.model.Part;
 import inventory.service.InventoryService;
 import javafx.event.ActionEvent;
