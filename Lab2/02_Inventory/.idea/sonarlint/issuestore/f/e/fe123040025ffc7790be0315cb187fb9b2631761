@@ -1,32 +1,32 @@
 
-L
-java:S3655ñ"5Call "result.isPresent()" before accessing the value.(ÃÇûŞ
+T	java:S106"9Replace this use of System.out or System.err by a logger.(ò¤áÿûÿÿÿÿ
+o
+java:S1450"YRemove the "modifyPart" field and declare it as a local variable in the relevant methods.(Ê‡×ß
 M
 java:S2696Ï"6Make the enclosing method "static" or remove this set.(„¿¬‰
-L
-java:S3655§"5Call "result.isPresent()" before accessing the value.(ÃÇûŞ
-œ
-java:S1186S"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ª¯şàüÿÿÿÿ
-T	java:S106‘"9Replace this use of System.out or System.err by a logger.(½ğöÈıÿÿÿÿ
 M
 java:S2696ß"6Make the enclosing method "static" or remove this set.(ŒÑ³ã
 T	java:S106©"9Replace this use of System.out or System.err by a logger.(¤¡ñÄÿÿÿÿÿ
-S
-java:S3655"5Call "result.isPresent()" before accessing the value.(ÃÇûŞ8è²™¾‰/
-M
-java:S2696Î"6Make the enclosing method "static" or remove this set.(ËØ”¦
+T	java:S106ò"9Replace this use of System.out or System.err by a logger.(´ä”×úÿÿÿÿ
+Q	java:S125u"<This block of commented-out lines of code should be removed.( ÆüÖ
+O	java:S106õ"9Replace this use of System.out or System.err by a logger.(¤Õï«
+T	java:S106‘"9Replace this use of System.out or System.err by a logger.(½ğöÈıÿÿÿÿ
 j
 java:S1450"TRemove the "scene" field and declare it as a local variable in the relevant methods.(‹ôÒ¡
 o
-java:S1450"YRemove the "modifyPart" field and declare it as a local variable in the relevant methods.(Ê‡×ß
-R
-java:S2696Ş"6Make the enclosing method "static" or remove this set.(„“”ôÿÿÿÿÿ
-O	java:S106õ"9Replace this use of System.out or System.err by a logger.(¤Õï«
+java:S1450"TRemove the "stage" field and declare it as a local variable in the relevant methods.(‹ğÑœıÿÿÿÿ
+S
+java:S3655"5Call "result.isPresent()" before accessing the value.(ÃÇûŞ8è²™¾‰/
+œ
+java:S1186S"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ª¯şàüÿÿÿÿ
+L
+java:S3655ñ"5Call "result.isPresent()" before accessing the value.(ÃÇûŞ
 w
 java:S1450"\Remove the "modifyProduct" field and declare it as a local variable in the relevant methods.(ø½é‚ùÿÿÿÿ
-o
-java:S1450"TRemove the "stage" field and declare it as a local variable in the relevant methods.(‹ğÑœıÿÿÿÿ
-Q	java:S125u"<This block of commented-out lines of code should be removed.( ÆüÖ
-T	java:S106ò"9Replace this use of System.out or System.err by a logger.(´ä”×úÿÿÿÿ
-T	java:S106"9Replace this use of System.out or System.err by a logger.(ò¤áÿûÿÿÿÿ
+R
+java:S2696Ş"6Make the enclosing method "static" or remove this set.(„“”ôÿÿÿÿÿ
+L
+java:S3655§"5Call "result.isPresent()" before accessing the value.(ÃÇûŞ
 O	java:S106«"9Replace this use of System.out or System.err by a logger.(¢¬õ÷
+M
+java:S2696Î"6Make the enclosing method "static" or remove this set.(ËØ”¦

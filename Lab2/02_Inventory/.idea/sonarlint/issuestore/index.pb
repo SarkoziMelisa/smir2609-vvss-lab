@@ -23,3 +23,7 @@ b
 2src/main/java/inventory/controller/Controller.java,a\6\a6635e298a8cf86a761fdee9b7ec350061490945
 a
 1src/main/java/inventory/repository/Inventory.java,7\8\7819f32b9ac7c828c03dfc9aa3a2c74a033968ef
+k
+;src/main/java/inventory/repository/InventoryRepository.java,9\5\959d3be9e6d77120b22cdef08892aae567b3ccfc
+o
+?src/test/java/inventory/repository/InventoryRepositoryTest.java,3\1\3107fd41d863651a73b5ce7fd2d3c848ab96a919
