@@ -25,7 +25,7 @@ class BBT_InventoryServiceTest {
         this.service = new InventoryService(repo);
     }
 
-    @RepeatedTest(1)
+    @Test
     @Order(1)
     @Tag("price")
     @DisplayName("Test ECP: Produs valid (pret valid)")
@@ -42,7 +42,7 @@ class BBT_InventoryServiceTest {
         }
     }
 
-    @RepeatedTest(2)
+    @Test
     @Order(8)
     @Tag("price")
     @DisplayName("Test ECP: Produs non-valid (pret 0)")
@@ -76,7 +76,7 @@ class BBT_InventoryServiceTest {
         }
     }
 
-    @RepeatedTest(1)
+    @Test
     @Tag("stock")
     @Order(2)
     @DisplayName("Test ECP: Produs valid (inStock in interval)")
