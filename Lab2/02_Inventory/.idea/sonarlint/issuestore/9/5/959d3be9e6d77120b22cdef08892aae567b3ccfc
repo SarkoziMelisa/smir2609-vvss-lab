@@ -1,10 +1,0 @@
-
-b
-java:S2095U"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(ãÈˆ¦
-c
-java:S2095‰"LUse try-with-resources or close this "BufferedWriter" in a "finally" clause.(ù»ı
-8
-java:S1643•"Use a StringBuilder instead.(¿ßÑùÿÿÿÿ
-T	java:S106‹"9Replace this use of System.out or System.err by a logger.(Ñ£±Ôúÿÿÿÿ
-R	java:S125Ù"<This block of commented-out lines of code should be removed.(¼ìüî
-R	java:S125Û"<This block of commented-out lines of code should be removed.(ã˜²•
