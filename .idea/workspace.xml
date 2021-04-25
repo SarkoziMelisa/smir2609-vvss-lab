@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b70a8d83-d28b-4cde-8f20-2867e4ffdc42" name="Default Changelist" comment="" />
+    <list default="true" id="f013fd4e-ed10-4f3e-b4c3-510b25f97e19" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,7 +11,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1rbxSIEoURCcIaYRp3Ho5BEzY56" />
+  <component name="ProjectId" id="1refg3ZNGyUyCgpC73vi4PrHDL1" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -28,38 +28,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.WBT_InventoryRepositoryTest">
-    <configuration name="BBT_InventoryServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Inventory" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="inventory.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="inventory.service" />
-      <option name="MAIN_CLASS_NAME" value="inventory.service.BBT_InventoryServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SRE_IntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Inventory" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="inventory.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="inventory.service" />
-      <option name="MAIN_CLASS_NAME" value="inventory.service.SRE_IntegrationTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WBT_InventoryRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SR_IntegrationTest">
+    <configuration name="InventoryRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Inventory" />
       <extension name="coverage">
         <pattern>
@@ -68,7 +38,37 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="inventory.repository" />
-      <option name="MAIN_CLASS_NAME" value="inventory.repository.WBT_InventoryRepositoryTest" />
+      <option name="MAIN_CLASS_NAME" value="inventory.repository.InventoryRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InventoryServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Inventory" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="inventory.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="inventory.service" />
+      <option name="MAIN_CLASS_NAME" value="inventory.service.InventoryServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SR_IntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Inventory" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="inventory.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="inventory.service" />
+      <option name="MAIN_CLASS_NAME" value="inventory.service.SR_IntegrationTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -76,9 +76,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.WBT_InventoryRepositoryTest" />
-        <item itemvalue="JUnit.BBT_InventoryServiceTest" />
-        <item itemvalue="JUnit.SRE_IntegrationTest" />
+        <item itemvalue="JUnit.SR_IntegrationTest" />
+        <item itemvalue="JUnit.InventoryServiceTest" />
+        <item itemvalue="JUnit.InventoryRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -87,13 +87,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b70a8d83-d28b-4cde-8f20-2867e4ffdc42" name="Default Changelist" comment="" />
-      <created>1619258588807</created>
+      <changelist id="f013fd4e-ed10-4f3e-b4c3-510b25f97e19" name="Default Changelist" comment="" />
+      <created>1619341583379</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1619258588807</updated>
-      <workItem from="1619258590267" duration="948000" />
-      <workItem from="1619259858736" duration="235000" />
+      <updated>1619341583379</updated>
+      <workItem from="1619341585190" duration="498000" />
     </task>
     <servers />
   </component>
@@ -105,9 +104,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
