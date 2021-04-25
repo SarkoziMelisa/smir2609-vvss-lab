@@ -93,6 +93,10 @@ public class InventoryService {
         }
     }
 
+    public int getNumberOfProducts() {
+        return repo.getNumberOfProducts();
+    }
+
     public void updateProduct(int productIndex, int productId, String name, double price, int inStock, int min, int max, ObservableList<Part> addParts){
         Product product = new Product(productId, name, price, inStock, min, max, addParts);
         repo.updateProduct(productIndex, product);
@@ -118,6 +122,10 @@ public class InventoryService {
 
     public void deleteProduct(Product product){
         repo.deleteProduct(product);
+    }
+
+    public void deleteProductById(Product product){
+        repo.deleteProductById(product);
     }
 
 }

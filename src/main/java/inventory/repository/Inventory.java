@@ -34,6 +34,14 @@ public class Inventory<T extends Item> {
     public void removeItem(T item) {
         items.remove(item);
     }
+
+    public void removeById(T item) {
+        for(int i = 0; i < items.size(); i++) {
+            if(items.get(i).getId() == item.getId()) {
+                items.remove(i);
+            }
+        }
+    }
     
     /**
      * Accepts search parameter and if an ID or name matches input, that item is returned
@@ -47,6 +55,10 @@ public class Inventory<T extends Item> {
             }
         }
         return null;
+    }
+
+    public int size(){
+        return items.size();
     }
     
     /**

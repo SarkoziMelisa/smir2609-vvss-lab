@@ -199,6 +199,10 @@ public class InventoryRepository {
 		writeAll();
 	}
 
+	public int getNumberOfProducts() {
+		return productInventory.size();
+	}
+
 	public void updateProduct(int productIndex, Product product){
 		productInventory.updateItem(productIndex, product);
 		writeAll();
@@ -211,6 +215,11 @@ public class InventoryRepository {
 
 	public void deleteProduct(Product product){
 		productInventory.removeItem(product);
+		writeAll();
+	}
+
+	public void deleteProductById(Product product){
+		productInventory.removeById(product);
 		writeAll();
 	}
 
